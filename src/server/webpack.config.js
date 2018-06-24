@@ -8,6 +8,7 @@ const StyleWebpackPlugin = require('style-loader')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const JsonWebpackPlugin = require('json-loader')
 const BabelWebpackPlugin = require('babel-loader')
+const UrlWebpackPlugin = require('url-loader')
 const IstanbulWebpackPlugin = require('istanbul-instrumenter-loader')
 
 module.exports = {
@@ -22,7 +23,9 @@ module.exports = {
     resolve: {
         alias: {
             core: path.resolve(__dirname, './webFrontend/core'),
-            theme: path.resolve(__dirname, './webFrontend/theme')
+            theme: path.resolve(__dirname, './webFrontend/theme'),
+            mainAppProvider: path.resolve(__dirname, './webFrontend/mainAppProvider.js'),
+            assets: path.resolve(__dirname, './webFrontend/assets')
         }
     },
     module: {
@@ -38,6 +41,16 @@ module.exports = {
                         ]
                     }
                 },
+            },
+            {
+                test: /\.(png|jp(e*)g|svg)$/,  
+                use: [{
+                    loader: 'url-loader',
+                    options: { 
+                        limit: 8000, // Convert images < 8kb to base64 strings
+                        name: 'images/[hash]-[name].[ext]'
+                    } 
+                }]
             },
             {
                 test: /\.js$/,

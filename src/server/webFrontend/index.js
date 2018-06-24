@@ -1,8 +1,11 @@
 const angular = require('angular')
-const productPage = angular.module('productPage', [])
+const mainAppProvider = require('mainAppProvider')
+const mainApp = angular.module('mainApp', [])
+mainAppProvider.set(mainApp)
 
-productPage.controller('mainController', ['$scope', function ($scope) {
+mainApp.controller('mainController', ['$scope', function ($scope) {
     $scope.elements = require('./elements.json')
 }])
 
-productPage.component('productPage', require('./components/productPage/productPage.component'))
+mainApp.component('productPage', require('theme/productPage/productPage.component'))
+

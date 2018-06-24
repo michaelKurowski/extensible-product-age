@@ -1,4 +1,4 @@
-const periodicTableUtils = require('../../../components/periodicTable/periodicTable.utils')
+const periodicTableUtils = require('theme/periodicTable/periodicTable.utils')
 const ElementProvider = require('../../../core/element')
 const assert = require('chai').assert
 

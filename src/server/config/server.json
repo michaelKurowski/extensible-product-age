@@ -1,5 +1,5 @@
 {
-    "serverPort": 80,
+    "serverPort": 8081,
     "dbPort": 8080,
     "dbUsername": "tempUser",
     "dbPassword": "tempPassword"

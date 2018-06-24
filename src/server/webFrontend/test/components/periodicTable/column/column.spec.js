@@ -1,1 +1,1 @@
-require('../../../../components/periodicTable/column/column.controller').controller
+require('theme/periodicTable/column/column.controller').controller

@@ -1,5 +1,5 @@
 const assert = require('chai').assert
-const ElementControllerProvider = require('../../../../../components/periodicTable/column/element/element.controller')
+const ElementControllerProvider = require('theme/periodicTable/column/element/element.controller')
 
 describe('Element component', () => {
     let suite = {}
