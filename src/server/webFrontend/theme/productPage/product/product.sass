@@ -1,14 +1,14 @@
 product
-    background-color: $color-gray
     height: 100%
     width: 100%
-    
-
-div
-    display: flex
-    flex-direction: row
-    margin-right: auto
-    margin-left: auto
-    width: 65rem
-    @import 'productSlideshow/productSlideshow'
-    @import 'productInfo/productInfo'
+    .product-main-info
+        background-color: $color-gray
+        .product-main-info-wrapper
+            display: flex
+            flex-direction: row
+            margin-right: auto
+            margin-left: auto
+            width: 65rem
+            @import 'productSlideshow/productSlideshow'
+            @import 'productInfo/productInfo'
+    @import 'productDetails/productDetails'
