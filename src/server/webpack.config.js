@@ -19,6 +19,12 @@ module.exports = {
         path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js'
     },
+    resolve: {
+        alias: {
+            core: path.resolve(__dirname, './webFrontend/core'),
+            theme: path.resolve(__dirname, './webFrontend/theme')
+        }
+    },
     module: {
         rules: [
             {
@@ -29,11 +35,6 @@ module.exports = {
                     options: {
                         presets: [
                             'es2015'
-                        ],
-                        plugins: [
-                            ['transform-private', {
-                                pattern: '^_'
-                            }]
                         ]
                     }
                 },
