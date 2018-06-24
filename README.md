@@ -1,9 +1,13 @@
 # Generic web app
-This is an interactive periodic table app, created by me. It's perfect for being a base for other NodeJS + AngularJS apps.
+This is a mockup for eCommerce product page.
+## Assumptions
+App mockup is structured in such way that core logic and view is separated, and communicates via standarised inner API. This allows for:
+* Extending/Use core components without having to think about view 
+There's separated directory `src/server/frontEnd/plugins` to keep custom logic from core logic provided by framework separated.
 ## How to use
 Clone a repository, and run `npm run deploy-prod` from `src/server/` in order to build the app, and then `npm start` to run a server locally.
 ## How to run dev environment
-After the repository is cloned run `npm run deploy-dev`. It will prepare the software for the first run. Once it will be finished, run `npm run start-dev`. Once started it'll listen to changes made in files, and automatically transpile the code that you write. It will also serve your changes under port `80`.
+After the repository is cloned run `npm run deploy-dev`. It will prepare the software for the first run. Once it will be finished, run `npm run start-dev`. Once started it'll listen to changes made in files, and automatically transpile the code that you write. It will also serve your changes under port `8081`.
 
 ## How to run tests
 All below commands should be run from src/server/
