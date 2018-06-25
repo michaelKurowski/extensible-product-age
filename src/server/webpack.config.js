@@ -25,6 +25,7 @@ module.exports = {
             core: path.resolve(__dirname, './webFrontend/core'),
             theme: path.resolve(__dirname, './webFrontend/theme'),
             mainAppProvider: path.resolve(__dirname, './webFrontend/mainAppProvider.js'),
+            mainAppCoreProvider: path.resolve(__dirname, './webFrontend/mainAppCoreProvider.js'),
             assets: path.resolve(__dirname, './webFrontend/assets')
         }
     },

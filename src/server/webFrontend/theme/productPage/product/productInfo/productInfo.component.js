@@ -1,5 +1,9 @@
+require('mainAppProvider').get().component('productColorDialer', require('./productColorDialer/productColorDialer.component.js'))
+require('mainAppProvider').get().component('productSizeDialer', require('./productSizeDialer/productSizeDialer.component.js'))
 module.exports = {
-    bindings: {},
+    bindings: {
+        viewedProduct: '<'
+    },
     template: require('./productInfo.pug'),
-    controller: ['$scope', require('./productInfo.controller')]
+    controller: ['$scope', 'cart', require('./productInfo.controller')]
 }

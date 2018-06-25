@@ -1,0 +1,8 @@
+p.color-text-medium
+    span
+        | Size 
+    span.text-bold
+        | {{sizes[sizeId]}}
+    .size-squares-wrapper
+        .size-square(ng-repeat='size in sizes track by $index' ng-click='chooseSize($index)')
+            | {{size}}

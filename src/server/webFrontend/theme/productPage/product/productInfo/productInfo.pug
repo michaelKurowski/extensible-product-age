@@ -1,27 +1,16 @@
 p
     span.color-text-light
-        | Performance Fabrics / 
+        | {{viewedProduct.category}} / 
     span.color-text-medium
-        | Juno Jacket
+        | {{viewedProduct.name}}
 h1.color-text-dark
-    | Juno Jacket
+    | {{viewedProduct.name}}
 p.color-text-light
-    | SKU: WJ06-XS-BLUE
-p.color-text-dark
-    | $94.71
-p.color-text-medium
-    span
-        | Color 
-    span.text-bold
-        | Blue
-div
-    |colors selection
-p.color-text-medium
-    span
-        | Size 
-    span.text-bold
-        | XS
-div
-    |Sizes selection
-button
+    | SKU: {{viewedProduct.sku}}-{{viewedProduct.sizes[sizeId]|uppercase}}-{{viewedProduct.colors[colorId].name|uppercase}}
+h2.color-text-dark
+    | {{viewedProduct.price|formatPrice}}
+
+product-color-dialer(colors='viewedProduct.colors' set-product-color='setProductColor')
+product-size-dialer(sizes='viewedProduct.sizes' set-product-size='setProductSize')
+button.add-to-cart(ng-click='addToCart()')
     | Add to cart
