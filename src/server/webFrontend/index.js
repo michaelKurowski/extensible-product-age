@@ -10,11 +10,6 @@ buildCore()
 const mainApp = angular.module('mainApp', ['mainApp.core'])
 mainAppProvider.set(mainApp)
 
-mainApp.controller('mainController', ['$scope', function ($scope) {
-    $scope.elements = require('./elements.json')
-}])
-mainApp.component('header', require('theme/header/header.component'))
-mainApp.component('productPage', require('theme/productPage/productPage.component'))
-
-mainApp.filter('formatPrice', require('theme/formatPrice.js'))
+mainApp.controller('mainController', ['$scope', function ($scope) {}])
+mainApp.component('index', require('theme/index.component'))
 

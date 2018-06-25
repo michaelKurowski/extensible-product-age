@@ -13,7 +13,7 @@ const IstanbulWebpackPlugin = require('istanbul-instrumenter-loader')
 
 module.exports = {
     entry: {
-        main: ['./main.sass', './index.js']
+        main: ['./theme/index.sass', './index.js']
     },
     context: __dirname + '/webFrontend',
     output: {
@@ -74,7 +74,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: '!!pug-loader!webFrontend/index.pug'
+            template: '!!pug-loader!webFrontend/theme/index.pug'
         }),
         new ExtractTextPlugin('styles.css')
     ]
