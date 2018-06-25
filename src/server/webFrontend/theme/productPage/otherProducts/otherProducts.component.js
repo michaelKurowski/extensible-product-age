@@ -1,3 +1,4 @@
+require('mainAppProvider').get().component('productTiles', require('./productTiles/productTiles.component.js'))
 
 module.exports = {
     bindings: {},

@@ -6,6 +6,6 @@ mainAppProvider.set(mainApp)
 mainApp.controller('mainController', ['$scope', function ($scope) {
     $scope.elements = require('./elements.json')
 }])
-
+mainApp.component('header', require('theme/header/header.component'))
 mainApp.component('productPage', require('theme/productPage/productPage.component'))
 
