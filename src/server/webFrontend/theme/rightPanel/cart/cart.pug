@@ -1,1 +1,19 @@
-
+h1
+    | Shopping list
+.shopping-item(ng-repeat='order in shoppingList')
+    img.photo(src=require('assets/placeholderProductImage.png'))
+    .info
+        h2
+            | {{order.product.name}}
+        p
+            | {{order.sku}}
+        p
+            | Color: {{order.color}}
+        p
+            | Size: {{order.size}}
+        p
+            | In stock!
+        p
+            | Qty: {{order.quantity}}
+    .price
+        | {{order.product.price|formatPrice}}

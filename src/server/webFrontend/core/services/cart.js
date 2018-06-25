@@ -1,18 +1,34 @@
 
 module.exports = [function () {
-    this.itemsInCart = []
+    this.ordersInCart = []
 
-    this.addToCart = item => {
-        this.itemsInCart.push(item)
+    this.addToCart = order => {
+        const similiarOrderId =
+            this.ordersInCart.findIndex(orderFromCart => 
+                areOrderedProductVariantsIdentical(orderFromCart, order)
+            )
+
+        if (similiarOrderId !== -1) {
+            this.ordersInCart[similiarOrderId].quantity++
+            return
+        }
+
+        this.ordersInCart.push(order)
+
+        function areOrderedProductVariantsIdentical(orderA, orderB) {
+            return (orderA.product === orderB.product)
+                && (orderA.color === orderB.color)
+                && (orderA.size === orderB.size)
+        }
     }
 
     this.removeFromCart = indexToRemove => {
-        this.itemsInCart = this.itemsInCart.filter((item, index) => index !== indexToRemove)
+        this.ordersInCart = this.ordersInCart.filter((order, index) => index !== indexToRemove)
     }
 
-    this.getItemsFromCart = () => this.itemsInCart
+    this.getOrdersFromCart = () => this.ordersInCart
 
     this.getCheckout = () =>
-        this.itemsInCart
-            .reduce((accumulator, item) => accumulator + item.price, 0)
+        this.ordersInCart
+            .reduce((accumulator, order) => accumulator + order.price, 0)
 }]

@@ -1,1 +1,19 @@
-button(ng-click='openRightTab')
+.content-wrapper
+    .grid-cell
+        .header-button
+            i.fas.fa-bars.icon-big
+    .grid-cell
+        .header-button
+            i.fas.fa-shopping-bag.icon-big
+    .grid-cell
+        .header-button
+            i.fas.fa-search.icon-small
+    .grid-cell
+        .header-button
+            i.fas.fa-heart.icon-small
+    .grid-cell
+        .header-button(ng-click='showCart()')
+            i.fas.fa-shopping-cart.icon-small
+    .grid-cell
+        .header-button
+            i.fas.fa-user-circle.icon-small

@@ -1,1 +1,2 @@
-cart(ng-if='view === AVAILIBLE_VIEWS.cart')
+.panel(ng-class='{hidden: !ctrl.visible}')
+    cart(ng-if='ctrl.view === AVAILIBLE_VIEWS.CART')

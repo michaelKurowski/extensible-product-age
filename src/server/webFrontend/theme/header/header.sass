@@ -4,3 +4,24 @@ header
     background-color: white
     width: 100%
     top: 0px
+    .content-wrapper
+        height: $header-height
+        display: grid
+        grid-template-columns: 1fr 7fr 1fr 1fr 1fr 1fr
+        .grid-cell
+            height: $header-height
+            .header-button
+                cursor: pointer
+                height: $header-height
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                .icon-big
+                    font-size: 30px
+                .icon-small
+                    font-size: 20px
+                i
+                    color: $color-text-light
+            .header-button:hover
+                background-color: $color-gray

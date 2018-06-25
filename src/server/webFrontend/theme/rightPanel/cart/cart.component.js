@@ -1,7 +1,5 @@
 module.exports = {
-    bindings: {
-        view: '<'
-    },
+    bindings: {},
     template: require('./cart.pug'),
     controller: ['$scope', 'cart', require('./cart.controller')]
 }
