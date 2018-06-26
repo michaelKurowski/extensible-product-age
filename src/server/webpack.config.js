@@ -9,7 +9,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const JsonWebpackPlugin = require('json-loader')
 const BabelWebpackPlugin = require('babel-loader')
 const UrlWebpackPlugin = require('url-loader')
-const IstanbulWebpackPlugin = require('istanbul-instrumenter-loader')
 
 module.exports = {
     entry: {
