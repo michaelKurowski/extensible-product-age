@@ -1,1 +1,0 @@
-require('theme/periodicTable/column/column.controller').controller
