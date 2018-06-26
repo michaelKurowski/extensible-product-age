@@ -3,5 +3,5 @@ require('mainAppProvider').get().component('productTiles', require('./productTil
 module.exports = {
     bindings: {},
     template: require('./otherProducts.pug'),
-    controller: ['$scope', require('./otherProducts.controller')]
+    controller: ['$scope', 'getProducts', require('./otherProducts.controller')]
 }

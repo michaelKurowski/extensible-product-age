@@ -1,7 +1,7 @@
 div
-    a
+    a(ng-class='{sale : product.sale}')
         img.picture(src=require('assets/placeholderProductImage.png'))
 p.color-text-medium
-    | Juno Jacket
+    | {{product.name}}
 p.color-text-light
-    | $94.71
+    | {{product.price|formatPrice}}

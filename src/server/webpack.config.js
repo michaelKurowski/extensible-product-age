@@ -28,7 +28,8 @@ module.exports = {
             mainAppCoreProvider: path.resolve(__dirname, './webFrontend/mainAppCoreProvider.js'),
             assets: path.resolve(__dirname, './webFrontend/assets'),
             plugins: path.resolve(__dirname, './webFrontend/plugins'),
-            classes: path.resolve(__dirname, './webFrontend/core/classes')
+            classes: path.resolve(__dirname, './webFrontend/core/classes'),
+            mockedData: path.resolve(__dirname, './mockedData')
         }
     },
     module: {

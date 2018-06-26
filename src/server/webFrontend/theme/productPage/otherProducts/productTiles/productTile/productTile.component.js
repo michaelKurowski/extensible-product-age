@@ -1,6 +1,9 @@
 
 module.exports = {
-    bindings: {},
+    bindings: {
+        product: '<'
+    },
     template: require('./productTile.pug'),
-    controller: ['$scope', require('./productTile.controller')]
+    controller: ['$scope', require('./productTile.controller')],
+    controllerAs: 'ctrl'
 }
