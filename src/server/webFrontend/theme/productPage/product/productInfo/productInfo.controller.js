@@ -1,4 +1,4 @@
-const Order = require('core/Order')
+const Order = require('classes/Order')
 
 module.exports = function ($scope, cart) {
     $scope.colorId = 0

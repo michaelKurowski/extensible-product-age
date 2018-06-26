@@ -1,9 +1,9 @@
-const Product = require('core/Product')
+//const Product = require('classes/Product')
 const PRODUCT_COLORS = require('core/productColors')
 
-module.exports = function ($scope) {
+module.exports = function ($scope, Product) {
     this.$onInit = () => {
-        $scope.viewedProduct = new Product({
+        const viewedProductData = {
             name: 'Juno Jacket',
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
             price: 8487,
@@ -16,6 +16,10 @@ module.exports = function ($scope) {
             photos: [],
             colors: [PRODUCT_COLORS.RED, PRODUCT_COLORS.GREEN, PRODUCT_COLORS.BLUE],
             discount: 2000
-        })
+        }
+
+        const viewedProduct = Object.assign(Object.create(Product), viewedProductData)
+
+        $scope.viewedProduct = viewedProduct 
     }
 }

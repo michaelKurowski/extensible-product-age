@@ -21,7 +21,7 @@ class Product {
         this.details = details
         this.material = material
         this.sale = sale
-        this.photos = []
+        this.photos = photos
         this.colors = colors
         this.sizes = sizes
         this.discount = discount

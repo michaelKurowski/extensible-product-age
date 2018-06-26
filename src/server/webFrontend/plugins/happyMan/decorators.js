@@ -1,8 +1,9 @@
 function getOrdersFromCart($delegate, $log) {
     const originalGetOrdersFromCart = $delegate.getOrdersFromCart
     $delegate.getOrdersFromCart = () => {
-        originalGetOrdersFromCart()
-        $log.warn('orders: ', originalGetOrdersFromCart())
+        const ordersFromCart = originalGetOrdersFromCart()
+        $log.warn('orders: ', ordersFromCart)
+        return ordersFromCart
     }
     return $delegate
 }

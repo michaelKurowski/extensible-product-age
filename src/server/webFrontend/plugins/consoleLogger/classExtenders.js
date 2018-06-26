@@ -1,3 +1,3 @@
 module.exports = [
-    {className = 'Product'}
+    {className: 'Product', }
 ]
