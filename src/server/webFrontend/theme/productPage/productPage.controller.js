@@ -8,7 +8,7 @@ module.exports = function ($scope, Product) {
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
             price: 8487,
             category: 'Default Category',
-            sku: 'Some SKU',
+            sku: 'WX8AJ',
             manufacturer: 'Some manufacturer',
             details:  'Some details',
             material: 'Some materials',
@@ -20,6 +20,7 @@ module.exports = function ($scope, Product) {
 
         const viewedProduct = Object.assign(Object.create(Product), viewedProductData)
 
+        viewedProduct.logMyName()
         $scope.viewedProduct = viewedProduct 
     }
 }
