@@ -47,4 +47,6 @@ module.exports = [function () {
     this.getTotalPrice = () => {
         return this.getSubtotal() - this.getDiscount() +  this.getTax() + this.getShippingPrice()
     }
+
+    //There should also be API for removing objects from shopping list
 }]
