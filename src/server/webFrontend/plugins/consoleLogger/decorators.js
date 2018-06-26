@@ -1,4 +1,4 @@
-function decorateAddToCart($delegate, $log) {
+function addToCart($delegate, $log) {
     const originalAddToCart = $delegate.addToCart
     $delegate.lastLoggedItem = null
     $delegate.addToCart = order => {
@@ -10,6 +10,16 @@ function decorateAddToCart($delegate, $log) {
     return $delegate
 }
 
+function getShippingPrice($delegate, $log) {
+    const originalGetShippingPrice = $delegate.getShippingPrice
+    $delegate.getShippingPrice = () => {
+        originalGetShippingPrice()
+        $log.warn('Shipping price is', originalGetShippingPrice())
+    }
+    return $delegate
+}
+
 module.exports = [
-    ['cart', ['$delegate', '$log', decorateAddToCart]]
+    ['cart', ['$delegate', '$log', addToCart]],
+    ['cart', ['$delegate', '$log', getShippingPrice]]
 ]

@@ -19,11 +19,8 @@ mainApp.controller('index', require('theme/index.controller'))
 function loadPlugins() {
     pluginsList.forEach(pluginName => {
         const decorators = require(`plugins/${pluginName}/decorators`)
-        mainAppCore.config(['$provide', function ($provide) {
-            decorators.forEach(decorator => {
-                $provide.decorator(...decorator)
-            })
-    
-        }])
+        mainAppCore.config(['$provide', 
+            $provide => decorators.forEach(decorator => $provide.decorator(...decorator))
+        ])
     })
 }
