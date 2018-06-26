@@ -3,6 +3,6 @@ require('mainAppProvider').get().component('otherProducts', require('./otherProd
 module.exports = {
     bindings: {},
     template: require('./productPage.pug'),
-    controller: ['$scope', 'Product', 'getProducts', require('./productPage.controller')],
+    controller: ['$scope', 'getProducts', require('./productPage.controller')],
     controllerAs: 'ctrl'
 }

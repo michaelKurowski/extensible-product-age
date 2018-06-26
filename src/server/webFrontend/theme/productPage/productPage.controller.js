@@ -1,9 +1,8 @@
-module.exports = function ($scope, Product, getProducts) {
+module.exports = function ($scope, getProducts) {
     this.$onInit = () => {
-        const viewedProductData = getProducts.getFirstProduct()
-        const viewedProduct = Object.assign(Object.create(Product), viewedProductData)
-
-        viewedProduct.logMyName()
+        const viewedProduct = getProducts.getFirstProduct()
+        console.log(viewedProduct)
+        //viewedProduct.logMyName()
         $scope.setViewedProduct = this.setViewedProduct
         $scope.setViewedProduct(viewedProduct)
     }
@@ -11,6 +10,6 @@ module.exports = function ($scope, Product, getProducts) {
     this.setViewedProduct = product => {
         this.viewedProduct = product
         $scope.viewedProduct = product
-
+        scrollTo(0, 0)
     }
 }

@@ -1,10 +1,15 @@
 function logMyName($delegate, $log) {
-    $delegate.logMyName = function () {
-        $log.warn('product name: ', this.name)
+    const originalProductCreator = $delegate.product
+    $delegate.product = function (argumentObject) {
+        const newProduct = originalProductCreator(argumentObject)
+        newProduct.logMyName = function () {
+            $log.warn('product name: ', this.name)
+        }
+        return newProduct
     }
     return $delegate
 }
 
 module.exports = [
-    ['Product', ['$delegate', '$log', logMyName]]
+    ['createModel', ['$delegate', '$log', logMyName]]
 ]

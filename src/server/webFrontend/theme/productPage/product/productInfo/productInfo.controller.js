@@ -1,4 +1,4 @@
-module.exports = function ($scope, cart, Order) {
+module.exports = function ($scope, cart, createModel) {
     $scope.colorId = 0
     $scope.sizeId = 0
     this.$onInit = () => {
@@ -21,7 +21,8 @@ module.exports = function ($scope, cart, Order) {
             color: this.viewedProduct.colors[$scope.colorId].name,
             product: this.viewedProduct
         }
-        const order = Object.assign(Object.create(Order), choosedVariant)
+        const order = createModel.order(choosedVariant)
+        console.log('created order', order)
         cart.addToCart(order)
     }
 
