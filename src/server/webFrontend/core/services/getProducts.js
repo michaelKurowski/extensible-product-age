@@ -10,5 +10,10 @@ module.exports = [function () {
         return result
     }
         
+    this.getFirstProduct = () => {
+        const mappedProduct = Object.assign({}, mockedProducts[0])
+        mappedProduct.colors = mappedProduct.colors.map(color => productColors[color])
+        return mappedProduct
+    }
 
 }]

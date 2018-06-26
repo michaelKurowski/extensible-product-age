@@ -1,6 +1,4 @@
-const Order = require('classes/Order')
-
-module.exports = function ($scope, cart) {
+module.exports = function ($scope, cart, Order) {
     $scope.colorId = 0
     $scope.sizeId = 0
     this.$onInit = () => {
@@ -18,9 +16,12 @@ module.exports = function ($scope, cart) {
     }
 
     this.addToCart = () => {
-        const size = this.viewedProduct.sizes[$scope.sizeId]
-        const color = this.viewedProduct.colors[$scope.colorId].name
-        const order = new Order(this.viewedProduct, size, color)
+        const choosedVariant = {
+            size: this.viewedProduct.sizes[$scope.sizeId],
+            color: this.viewedProduct.colors[$scope.colorId].name,
+            product: this.viewedProduct
+        }
+        const order = Object.assign(Object.create(Order), choosedVariant)
         cart.addToCart(order)
     }
 

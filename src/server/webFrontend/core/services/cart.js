@@ -16,7 +16,9 @@ module.exports = [function () {
         this.ordersInCart.push(order)
 
         function areOrderedProductVariantsIdentical(orderA, orderB) {
-            return (orderA.product === orderB.product)
+            return (orderA.product.name === orderB.product.name)
+                && (orderA.product.discount === orderA.product.discount)
+                && (orderA.product.price === orderA.product.price)
                 && (orderA.color === orderB.color)
                 && (orderA.size === orderB.size)
         }
