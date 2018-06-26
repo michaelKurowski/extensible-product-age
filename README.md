@@ -1,9 +1,10 @@
 # Generic web app
-This is a mockup for eCommerce product page.
+This is a mockup for eCommerce product page. The main code of app is located in `src/server/frontEnd`
 ## Assumptions
 App mockup is structured in such way that core logic and view is separated, and communicates via standarised inner API. This allows for:
-* ExtendingUse core components without having to think about view 
-There's separated directory `src/server/frontEnd/plugins` to keep custom logic from core logic separated.
+* User can create his own theme froms cratch without worrying about changing logic. Logic is located in `src/server/frontEnd/core`, theme in `src/server/frontEnd/core`.
+* User can extend core logic by creating plugins in `src/server/frontEnd/plugins`, under the hood they're basically AngularJS decorators.
+* Core can be update by simply replacing `src/server/frontEnd/core` with new one. If API in new version is legacy-compatible, everything should still work.
 ## How to use
 Clone a repository, and run `npm run deploy-prod` from `src/server` in order to build the app, and then `npm start` to run a server locally.
 ## How to run dev environment
