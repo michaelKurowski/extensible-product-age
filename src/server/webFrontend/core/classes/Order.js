@@ -17,6 +17,10 @@ class Order {
     getDiscount() {
         return this.product.discount * this.quantity
     }
+
+    getTax() {
+        return Math.round(this.getPriceWithDiscount() * (1/20))
+    }
 }
 
 module.exports = Order

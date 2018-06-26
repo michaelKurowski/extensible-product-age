@@ -38,7 +38,7 @@
         "material": "Titanotton",
         "sale": true,
         "photos": [],
-        "colors": ["RED"],
+        "colors": ["RED" , "BLUE"],
         "discount": 1000
     },
     {

@@ -23,13 +23,13 @@ h1
 h1
     | Shopping summary
 p
-    | Subtotal: {{subtotal|formatPrice}}
+    | Subtotal: {{getSubtotal()|formatPrice}}
 p
     | Shipping and handling: {{shippingPrice|formatPrice}}
 p
-    | Discount: {{discount|formatPrice}}
+    | Discount: {{getDiscount()|formatPrice}}
 p
-    | Tax: {{tax}}
+    | Tax: {{getTax()|formatPrice}}
 h1
-    | Grand Total {{totalPrice}}
+    | Grand Total {{getTotalPrice()|formatPrice}}
 big-button(text='CHECKOUT_LABEL')

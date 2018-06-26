@@ -1,6 +1,6 @@
 .content-wrapper
     h1.color-text-dark We found other products you might like
-    product-tiles(products = 'otherProducts')
+    product-tiles(products = 'otherProducts' set-viewed-product='setViewedProduct')
     sales
     h1.color-text-dark Similar products
-    product-tiles(products = 'similarProducts')
+    product-tiles(products = 'similarProducts' set-viewed-product='setViewedProduct')

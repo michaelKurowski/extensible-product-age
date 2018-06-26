@@ -1,7 +1,8 @@
 
 module.exports = {
     bindings: {
-        product: '<'
+        product: '<',
+        setViewedProduct: '<'
     },
     template: require('./productTile.pug'),
     controller: ['$scope', require('./productTile.controller')],

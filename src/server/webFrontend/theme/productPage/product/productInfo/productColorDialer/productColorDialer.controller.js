@@ -6,6 +6,10 @@ module.exports = function ($scope) {
         $scope.chooseColor = this.chooseColor
     }
 
+    this.$onChanges = () => {
+        $scope.colors = this.colors
+    }
+
     this.chooseColor = colorId => {
         $scope.colorId = colorId
         this.setProductColor(colorId)

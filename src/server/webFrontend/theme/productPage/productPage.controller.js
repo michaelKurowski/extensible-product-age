@@ -1,7 +1,7 @@
 //const Product = require('classes/Product')
 const PRODUCT_COLORS = require('core/productColors')
 
-module.exports = function ($scope, Product) {
+module.exports = function ($scope, Product, $timeout) {
     this.$onInit = () => {
         const viewedProductData = {
             name: 'Juno Jacket',
@@ -21,6 +21,13 @@ module.exports = function ($scope, Product) {
         const viewedProduct = Object.assign(Object.create(Product), viewedProductData)
 
         viewedProduct.logMyName()
-        $scope.viewedProduct = viewedProduct 
+        $scope.setViewedProduct = this.setViewedProduct
+        $scope.setViewedProduct(viewedProduct)
+    }
+
+    this.setViewedProduct = product => {
+        this.viewedProduct = product
+        $scope.viewedProduct = product
+
     }
 }

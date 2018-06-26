@@ -4,8 +4,10 @@ module.exports = function ($scope, cart) {
     this.$onInit = () => {
         $scope.shoppingList = cart.getOrdersFromCart()
         $scope.CHECKOUT_LABEL = 'Go to checkout'
-        $scope.subtotal = cart.getSubtotal()
+        $scope.getSubtotal = cart.getSubtotal
         $scope.shippingPrice = cart.getShippingPrice()
-        $scope.discount = cart.getDiscount()
+        $scope.getDiscount = cart.getDiscount
+        $scope.getTax = cart.getTax
+        $scope.getTotalPrice = cart.getTotalPrice
     }
 }

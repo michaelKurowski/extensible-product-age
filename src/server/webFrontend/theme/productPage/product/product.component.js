@@ -6,5 +6,6 @@ module.exports = {
         viewedProduct: '<'
     },
     template: require('./product.pug'),
-    controller: ['$scope', require('./product.controller')]
+    controller: ['$scope', require('./product.controller')],
+    controllerAs: 'ctrl'
 }

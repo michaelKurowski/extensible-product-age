@@ -6,6 +6,10 @@ module.exports = function ($scope) {
         $scope.chooseSize = this.chooseSize
     }
 
+    this.$onChanges = () => {
+        $scope.sizes = this.sizes
+    }
+
     this.chooseSize = sizeId => {
         $scope.sizeId = sizeId
         this.setProductSize(sizeId)

@@ -11,6 +11,12 @@ module.exports = function ($scope, cart) {
         $scope.addToCart = this.addToCart
     }
 
+    this.$onChanges = () => {
+        $scope.viewedProduct = this.viewedProduct
+        $scope.colorId = 0
+        $scope.sizeId = 0
+    }
+
     this.addToCart = () => {
         const size = this.viewedProduct.sizes[$scope.sizeId]
         const color = this.viewedProduct.colors[$scope.colorId].name
