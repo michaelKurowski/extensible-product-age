@@ -16,4 +16,14 @@ module.exports = ['createModel', function (createModel) {
         return createModel.product(mappedProduct)
     }
 
+    this.findProductByName = name => {
+        const findings = mockedProducts.find(product => {
+            product.name.toUpperCase().indexOf(name.toUpperCase()) !== -1
+        })
+        return findings.map(createModel.product)
+    }
+
+    this.convertResultsToProductObject(result) {
+
+    }
 }]
