@@ -1,8 +1,7 @@
 module.exports = function ($scope, getProducts) {
     this.$onInit = () => {
         const viewedProduct = getProducts.getFirstProduct()
-        console.log(viewedProduct)
-        //viewedProduct.logMyName()
+        viewedProduct.logMyName()
         $scope.setViewedProduct = this.setViewedProduct
         $scope.setViewedProduct(viewedProduct)
     }

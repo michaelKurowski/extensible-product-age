@@ -3,7 +3,7 @@ function logMyName($delegate, $log) {
     $delegate.product = function (argumentObject) {
         const newProduct = originalProductCreator(argumentObject)
         newProduct.logMyName = function () {
-            $log.warn('product name: ', this.name)
+            $log.warn('[productExtender plugin] Product name: ', this.name)
         }
         return newProduct
     }
