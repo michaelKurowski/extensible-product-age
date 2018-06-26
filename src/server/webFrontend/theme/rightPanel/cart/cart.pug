@@ -15,5 +15,21 @@ h1
             | In stock!
         p
             | Qty: {{order.quantity}}
-    .price
-        | {{order.product.price|formatPrice}}
+    div
+        span.real-price
+            | {{order.getPriceWithDiscount() | formatPrice}}
+        span.price-without-discount
+            | {{order.getPriceWithoutDiscount() | formatPrice}}
+h1
+    | Shopping summary
+p
+    | Subtotal: {{subtotal|formatPrice}}
+p
+    | Shipping and handling: {{shippingPrice|formatPrice}}
+p
+    | Discount: {{discount|formatPrice}}
+p
+    | Tax: {{tax}}
+h1
+    | Grand Total {{totalPrice}}
+big-button(text='CHECKOUT_LABEL')

@@ -28,7 +28,13 @@ module.exports = [function () {
 
     this.getOrdersFromCart = () => this.ordersInCart
 
-    this.getCheckout = () =>
+    this.getSubtotal = () =>
         this.ordersInCart
-            .reduce((accumulator, order) => accumulator + order.price, 0)
+            .reduce((accumulator, order) => accumulator + order.getPriceWithoutDiscount(), 0)
+    
+    this.getShippingPrice = () => 500
+
+    this.getDiscount = () =>
+        this.ordersInCart
+            .reduce((accumulator, order) => accumulator + order.getDiscount(), 0)
 }]

@@ -14,7 +14,8 @@ module.exports = function ($scope) {
             material: 'Some materials',
             sale: false,
             photos: [],
-            colors: [PRODUCT_COLORS.RED, PRODUCT_COLORS.GREEN, PRODUCT_COLORS.BLUE]
+            colors: [PRODUCT_COLORS.RED, PRODUCT_COLORS.GREEN, PRODUCT_COLORS.BLUE],
+            discount: 2000
         })
     }
 }

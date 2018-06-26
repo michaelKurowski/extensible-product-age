@@ -10,7 +10,8 @@ class Product {
         sale = false,
         photos = [],
         colors = [],
-        sizes = []
+        sizes = [],
+        discount = 0
     } = {}) {
         this.name = name
         this.price = price
@@ -23,6 +24,7 @@ class Product {
         this.photos = []
         this.colors = colors
         this.sizes = sizes
+        this.discount = discount
     }
 }
 
