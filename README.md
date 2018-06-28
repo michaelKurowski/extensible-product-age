@@ -2,7 +2,7 @@
 This is a mockup for eCommerce product page. The main code of app is located in `src/server/frontEnd`. Website is partially working, the non working elements are defined in code as components with draft of code.
 ## Assumptions
 App mockup is structured in such way that core logic and view is separated, and communicates via standarised inner API. This allows for:
-* User can create his own theme froms cratch without worrying about changing logic. Logic is located in `src/server/frontEnd/core`, theme in `src/server/frontEnd/core`.
+* User can create his own theme froms cratch without worrying about changing logic. Logic is located in `src/server/frontEnd/core`, theme in `src/server/frontEnd/theme`.
 * User can extend core logic by creating plugins in `src/server/frontEnd/plugins`, under the hood they're basically AngularJS decorators.
 * Core can be update by simply replacing `src/server/frontEnd/core` with new one. If API in new version is legacy-compatible, everything should still work.
 ## How to use
